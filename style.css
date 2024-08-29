@@ -1,0 +1,24 @@
+/* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,::before,::after{box-sizing:border-box}*{margin:0}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
+
+body{
+    background-color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+}
+.sidebar{
+    background-color: #1992d4;
+}
+.sidebar *{
+    color: white;
+    text-decoration: none;
+}
+header{
+    background-color: #fff;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
