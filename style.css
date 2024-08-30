@@ -5,9 +5,6 @@ body{
     background-color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-    display: grid;
-    grid-template-columns: 20% 80%;
-
 }
 .sidebar{
     background-color: #1992d4;
@@ -21,4 +18,64 @@ header{
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.site-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.8fr;
+    grid-template-rows: 0.5fr 1.5fr 1fr;
+    gap: 0px 0em;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar main";
+}
+
+.sidebar {
+    grid-area: sidebar;
+    position: fixed;
+    height: 100%;
+    padding: 2em;
+    padding-right: 5em;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.6fr 1.4fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "project-cont project-cont announcements"
+        "project-cont project-cont announcements"
+        "project-cont project-cont trending";
+    grid-area: main;
+}
+
+.announcements {grid-area: announcements;}
+.trending {grid-area: trending;}
+
+.project-cont {
+    display: grid;
+    grid-template-columns: 1.5fr 0.1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "p1 . p2"
+        "p3 . p4"
+        "p5 . p6";
+    grid-area: project-cont;
+}
+
+.p1 {grid-area: p1;}
+.p2 {grid-area: p2;}
+.p3 {grid-area: p3;}
+.p4 {grid-area: p4;}
+.p5 {grid-area: p5;}
+.p6 {grid-area: p6;}
+
+header {
+    grid-area: header;
 }
