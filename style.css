@@ -4,8 +4,14 @@
 body{
     background-color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    margin-right: 2em;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .sidebar{
     background-color: #1992d4;
 }
@@ -18,12 +24,66 @@ header{
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: fixed;
+    width: 100%;
+    padding-left: 16%;
+    z-index: 1;
+    padding-bottom: 1em;
+}
+.nav-searchbar{
+    display: flex;
+    padding-top: 1em;
+    align-items: center;
+}
+.nav-profile{
+    display: flex;
+    gap: 1em;
+    padding-top: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.nav-profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.nav-btn-cont{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    align-items: flex-start;
+    align-items: center;
+}
+.nav-btn{
+    background-color: #1992d4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: .35em 1.25em;
+    font-size: 90%;
+}
+.nav-welcome{
+    display: flex;
+    align-items: center;
+}
+.nav-welcome-text{
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+.nav-welcome-text small{
+    font-weight: 600;
+}
+.welcome-profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 .site-container {
     display: grid;
-    grid-template-columns: 0.5fr 1.8fr;
-    grid-template-rows: 0.5fr 1.5fr 1fr;
+    grid-template-columns: 0.30fr 1.8fr;
+    grid-template-rows: 10em 1.5fr 1fr;
     gap: 0px 0em;
     grid-auto-flow: row;
     grid-template-areas:
@@ -33,17 +93,24 @@ header{
 }
 
 .sidebar {
+    z-index: 2;
     grid-area: sidebar;
     position: fixed;
     height: 100%;
-    padding: 2em;
-    padding-right: 5em;
+    padding: 1.75em;
+    /* padding-right: 4em; */
+}
+.sidebar-link-cont{
+    display: grid;
+    grid-template-columns: 1.75em 1fr;
+    grid-template-rows: 1.5em 1fr;
+    gap: 1em;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.6fr 1.4fr;
+    grid-template-rows: 1fr 0.5fr 1.5fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -58,7 +125,8 @@ main {
 
 .project-cont {
     display: grid;
-    grid-template-columns: 1.5fr 0.1fr 1.5fr;
+    /* grid-template-columns: 1fr .05em 1fr; */
+    grid-template-columns: 49% .1% 49%;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -67,6 +135,17 @@ main {
         "p3 . p4"
         "p5 . p6";
     grid-area: project-cont;
+}
+.project-item{
+    background-color: white;
+    padding: .5em;
+    margin: 1em;
+    border: 1vh solid #ffb619;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-radius: 10px;
+    
 }
 
 .p1 {grid-area: p1;}
@@ -78,4 +157,11 @@ main {
 
 header {
     grid-area: header;
+}
+
+.announcements, .trending{
+    background-color: white;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 10px;
 }
