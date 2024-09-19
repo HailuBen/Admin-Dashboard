@@ -1,9 +1,31 @@
 /* Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
 *,::before,::after{box-sizing:border-box}*{margin:0}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}#root,#__next{isolation:isolate}
+/* roboto font */
+.roboto-thin{font-family:"Roboto",sans-serif;font-weight:100;font-style:normal}.roboto-light{font-family:"Roboto",sans-serif;font-weight:300;font-style:normal}.roboto-regular{font-family:"Roboto",sans-serif;font-weight:400;font-style:normal}.roboto-medium{font-family:"Roboto",sans-serif;font-weight:500;font-style:normal}.roboto-bold{font-family:"Roboto",sans-serif;font-weight:700;font-style:normal}.roboto-black{font-family:"Roboto",sans-serif;font-weight:900;font-style:normal}.roboto-thin-italic{font-family:"Roboto",sans-serif;font-weight:100;font-style:italic}.roboto-light-italic{font-family:"Roboto",sans-serif;font-weight:300;font-style:italic}.roboto-regular-italic{font-family:"Roboto",sans-serif;font-weight:400;font-style:italic}.roboto-medium-italic{font-family:"Roboto",sans-serif;font-weight:500;font-style:italic}.roboto-bold-italic{font-family:"Roboto",sans-serif;font-weight:700;font-style:italic}.roboto-black-italic{font-family:"Roboto",sans-serif;font-weight:900;font-style:italic}
+
+.icon-btn{
+    border: none;
+    border-radius: 1em;
+    padding: 4px;
+    transition: .2s;
+}
+
+#dash-btn{background-color: #1992d4;}
+#dash-svg{background-size: 100px 100px;}
+#dash-btn > #dash-svg{transition: .5s;}
+#dash-btn:hover > #dash-svg{filter: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(7493%) hue-rotate(8deg) brightness(106%) contrast(88%);}
+.dash:hover{background-color: #e1e1e1;}
+
+.bell-svg{filter: invert(100%) sepia(40%) saturate(865%) hue-rotate(180deg) brightness(95%) contrast(99%);}
+.bell {background-color: #ffffff;}
+.bell:hover{background-color: #e1e1e1;}
+.bell:active{background-color: #c7c7c7;}
+
+
 
 body{
     background-color: aliceblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Roboto;
     margin-right: 2em;
 }
 
@@ -18,7 +40,9 @@ img {
 .sidebar *{
     color: white;
     text-decoration: none;
+    font-size: 107%;
 }
+
 header{
     background-color: #fff;
 
@@ -30,37 +54,52 @@ header{
     z-index: 1;
     padding-bottom: 1em;
 }
-.nav-searchbar{
+header {grid-area: header;}
+
+#searchbar{
+    border-radius: 10px;
+    border: none;
+    background-color: #dde2ee;
+    flex-grow: 1;
+    margin-left: 1em;
+}
+.nav-search{
     display: flex;
-    padding-top: 1em;
     align-items: center;
+    padding: 1em;
+    /* justify-self: flex-end; */
 }
 .nav-profile{
     display: flex;
-    gap: 1em;
+    gap: 1.5em;
     padding-top: 1em;
-    justify-content: center;
+    margin-right: 20%;
+    justify-content: flex-end;
     align-items: center;
 }
+
 .nav-profile-img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 .nav-btn-cont{
     display: flex;
-    justify-content: center;
-    gap: 1em;
+    margin-right: 10%;
+    justify-content: flex-end;
+    gap: 1.5em;
     align-items: flex-start;
     align-items: center;
 }
 .nav-btn{
     background-color: #1992d4;
-    color: white;
+    color: #f4f6fc;
     border: none;
     border-radius: 20px;
-    padding: .35em 1.25em;
-    font-size: 90%;
+    padding: .5em 1.5em;
+    font-size: 89%;
+    font-weight: 500;
+    width: 7em;
 }
 .nav-welcome{
     display: flex;
@@ -78,6 +117,10 @@ header{
     width: 80px;
     height: 80px;
     border-radius: 50%;
+}
+
+.nav-welcome, .nav-search{
+    margin: 0 4%;
 }
 
 .site-container {
@@ -108,60 +151,118 @@ header{
 }
 
 main {
+    margin: .75% 3%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 1.5fr;
+    /* grid-template-columns: .5fr 2fr 1fr .6fr;
+    grid-template-rows: .1fr 1fr 0.5fr 1.1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "project-cont project-cont announcements"
-        "project-cont project-cont announcements"
-        "project-cont project-cont trending";
+        "projects-h3 . announcements-h3"
+        "projects-cont projects-cont announcements"
+        "projects-cont projects-cont announcements"
+        "projects-cont projects-cont trending";
+    grid-area: main; */
+
+    grid-template-columns: 2fr .8fr;
+    grid-auto-flow: row;
+    gap: 0px 0px;
+    /* grid-template-areas:
+    "projects-cont announcements-trending-cont"
+    "projects-cont announcements-trending-cont"
+    "projects-cont announcements-trending-cont"; */
     grid-area: main;
+} /* can do media query to make grid display 3 projects row by row with enlarged to maxmize usable space */
+
+.project-item, header{
+    box-shadow: 1px 5px 4px #ccd2d9;
 }
 
-.announcements {grid-area: announcements;}
-.trending {grid-area: trending;}
+.projects-h3 {grid-area: projects-h3;}
+/* .projects-cont {grid-area: projects-cont;} */
 
-.project-cont {
-    display: grid;
+.projects-cont {
+    /* display: grid; */
     /* grid-template-columns: 1fr .05em 1fr; */
-    grid-template-columns: 49% .1% 49%;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-columns: 20% 1fr 1fr;
+    grid-template-rows: 2% 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
+        "projects-h3 . ."
         "p1 . p2"
         "p3 . p4"
         "p5 . p6";
-    grid-area: project-cont;
+    grid-area: projects-cont; */
+}
+.projects-h3, .announcements-h3, .trending-h3{
+    margin-bottom: -0.75em;
+}
+.projects-h3{
+    margin-left: 1em;
+}
+.projects{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 .project-item{
     background-color: white;
-    padding: .5em;
+    padding: 1.5em;
     margin: 1em;
     border: 1vh solid #ffb619;
     border-right: none;
     border-bottom: none;
     border-top: none;
-    border-radius: 10px;
-    
+    border-radius: 8px;   
+}
+.project-item p{
+    color: #595959;
+    line-height: normal;
+}
+.project-item *{
+    /* margin: .5em; */
 }
 
-.p1 {grid-area: p1;}
+.project-btn-cont{
+    display: flex;
+    justify-content: flex-end;
+    gap: .5em;
+    padding: 1em 1em 0 1em;
+}
+.project-btn-cont button{
+    border: none;
+    background-color: white;
+    font-size: 130%;
+}
+
+/* .p1 {grid-area: p1;}
 .p2 {grid-area: p2;}
 .p3 {grid-area: p3;}
 .p4 {grid-area: p4;}
 .p5 {grid-area: p5;}
-.p6 {grid-area: p6;}
+.p6 {grid-area: p6;} */
 
-header {
-    grid-area: header;
+.announcements-trending-cont{
+    
+}
+
+.announcements{
+    margin-bottom: 2em;
+}
+.announcement-item p{
+    font-size: 85%;
+    color: #595959;
+    line-height: normal;
+}
+hr{
+    margin: 1em 0;
 }
 
 .announcements, .trending{
     background-color: white;
-    padding: 1em;
+    padding: 1.5em;
     margin-top: 1em;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 1px 5px 4px #ccd2d9;
 }

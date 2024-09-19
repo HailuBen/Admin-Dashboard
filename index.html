@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Dashboard</title>
 </head>
 
@@ -12,7 +15,10 @@
     <div class="site-container">
         <div class="sidebar">
             <div class="sidebar-link-cont">
-                <p>⏹</p>
+                <!-- <p>⏹</p> -->
+                <button id="dash-btn" class="icon-btn dash">
+                    <img id="dash-svg" class="dash-svg" src="img/icons/dashboard_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dashboard icon">
+                </button>
                 <a href="#">
                     <h3>Dashboard</h3>
                 </a>
@@ -20,7 +26,10 @@
             <br>
             <br>
             <div class="sidebar-link-cont">
-                <p>🏠</p>
+                <!-- <p>🏠</p> -->
+                 <button id="home-btn" class="icon-btn home">
+                    <img id="home-svg" src="img/icons/home_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Home icon">
+                 </button>
                 <a href="#">
                     <h4>Home</h4>
                 </a>
@@ -55,7 +64,7 @@
                     <h4>Communities</h4>
                 </a>
             </div>
-            <br>
+            <br><br>
             <div class="sidebar-link-cont">
                 <p>⚙</p>
                 <a href="#">
@@ -76,13 +85,16 @@
             </div>
         </div>
         <header>
-            <div class="nav-searchbar">
+            <div class="nav-search">
                 <label for="searchbar">🔍</label>
                 <input type="search" name="searchbar" id="searchbar">
             </div>
             <div class="nav-profile">
                 <!-- notificon -->
-                🔔
+                <!-- 🔔 -->
+                <button class="icon-btn bell">
+                    <img class="bell-svg" src="img/icons/notifications_active_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Notifications bell icon">
+                </button>
                 <img class="nav-profile-img" src="img/skyler-ewing-fPbLnMMd8BU-unsplash.jpg" alt="User profile image">
                 <h4>username</h4>
             </div>
@@ -100,90 +112,125 @@
             </div>
         </header>
         <main>
-            <h3 class="projects-h3">Your Projects</h3>
-            <div class="project-cont">
-                <div class="project-item p1">
-                    <h4>Project 1</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
+            <div class="projects-cont">
+                <h3 class="projects-h3">Your Projects</h3>
+                <div class="projects">
+                    <div class="project-item p1">
+                        <h4>Project 1</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                        <div class="project-btn-cont">
+                            <button class="project-btn star">🌟</button>
+                            <button class="project-btn eye">👁‍🗨</button>
+                            <button class="project-btn flag">🏴</button>
+                        </div>
+                    </div>
+                    <div class="project-item p2">
+                        <h4>Project 2</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                        <div class="project-btn-cont">
+                            <button class="project-btn star">🌟</button>
+                            <button class="project-btn eye">👁‍🗨</button>
+                            <button class="project-btn flag">🏴</button>
+                        </div>
+                    </div>
+                    <div class="project-item p3">
+                        <h4>Project 3</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                            <div class="project-btn-cont">
+                                <button class="project-btn star">🌟</button>
+                                <button class="project-btn eye">👁‍🗨</button>
+                                <button class="project-btn flag">🏴</button>
+                            </div>
+                    </div>
+                    <div class="project-item p4">
+                        <h4>Project 4</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                            <div class="project-btn-cont">
+                                <button class="project-btn star">🌟</button>
+                                <button class="project-btn eye">👁‍🗨</button>
+                                <button class="project-btn flag">🏴</button>
+                            </div>
+                    </div>
+                    <div class="project-item p5">
+                        <h4>Project 5</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                            <div class="project-btn-cont">
+                                <button class="project-btn star">🌟</button>
+                                <button class="project-btn eye">👁‍🗨</button>
+                                <button class="project-btn flag">🏴</button>
+                            </div>
+                    </div>
+                    <div class="project-item p6">
+                        <h4>Project 6</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
+                            corporis
+                            officiis
+                            necessitatibus deserunt dignissimos quas illum aut.</p>
+                            <div class="project-btn-cont">
+                                <button class="project-btn star">🌟</button>
+                                <button class="project-btn eye">👁‍🗨</button>
+                                <button class="project-btn flag">🏴</button>
+                            </div>
+                    </div>
                 </div>
-                <div class="project-item p2">
-                    <h4>Project 2</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
-                </div>
-                <div class="project-item p3">
-                    <h4>Project 3</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
-                </div>
-                <div class="project-item p4">
-                    <h4>Project 4</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
-                </div>
-                <div class="project-item p5">
-                    <h4>Project 5</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
-                </div>
-                <div class="project-item p6">
-                    <h4>Project 6</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem eligendi dolorum, magnam
-                        corporis
-                        officiis
-                        necessitatibus deserunt dignissimos quas illum aut.</p>
-                </div>
+
             </div>
 
-            <div class="announcements">
-                <h3>Announcements</h3>
-                <div class="announcement-item">
-                    <h5>Announcement 1</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
-                    </p>
+            <div class="announcements-trending-cont">
+                <h3 class="announcements-h3">Announcements</h3>
+                <div class="announcements">
+                    <div class="announcement-item">
+                        <h5>Announcement 1</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <h5>Announcement 2</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <h5>Announcement 3</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
+                        </p>
+                    </div>
                 </div>
-                <div class="announcement-item">
-                    <h5>Announcement 2</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
-                    </p>
-                </div>
-                <br>
-                <hr>
-                <br>
-                <div class="announcement-item">
-                    <h5>Announcement 3</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, unde ut quas eius nulla facere.
-                    </p>
+    
+                <h3 class="trending-h3">Trending</h3>
+                <div class="trending">
+                    <div>
+                        <img src="" alt="">
+                        <a href="#">@user1</a>
+                    </div>
+                    <div>
+                        <a href="#">@user2</a>
+                    </div>
+                    <div>
+                        <a href="#">@user3</a>
+                    </div>
+                    <div>
+                        <a href="#">@user4</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="trending">
-                <h3>Trending</h3>
-                <div>
-                    <img src="" alt="">
-                    <a href="#">@user1</a>
-                </div>
-                <div>
-                    <a href="#">@user2</a>
-                </div>
-                <div>
-                    <a href="#">@user3</a>
-                </div>
-                <div>
-                    <a href="#">@user4</a>
-                </div>
-            </div>
+           
         </main>
     </div>
 </body>
