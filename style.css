@@ -8,16 +8,23 @@
     border-radius: 1em;
     padding: 4px;
     transition: .2s;
+    background-color: #1992d4;
+}
+#search-btn{
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
-#dash-btn{background-color: #1992d4;}
+
 #dash-svg{background-size: 100px 100px;}
 #dash-btn > #dash-svg{transition: .5s;}
 #dash-btn:hover > #dash-svg{filter: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(7493%) hue-rotate(8deg) brightness(106%) contrast(88%);}
-.dash:hover{background-color: #e1e1e1;}
+/* .dash:hover{background-color: #e1e1e1;} */
 
-.bell-svg{filter: invert(100%) sepia(40%) saturate(865%) hue-rotate(180deg) brightness(95%) contrast(99%);}
 .bell {background-color: #ffffff;}
+.bell-svg{filter: invert(100%) sepia(40%) saturate(865%) hue-rotate(180deg) brightness(95%) contrast(99%);}
 .bell:hover{background-color: #e1e1e1;}
 .bell:active{background-color: #c7c7c7;}
 
@@ -34,13 +41,39 @@ img {
     height: auto;
 }
 
+a {
+    display: block;
+    position: relative;
+}
+
 .sidebar{
     background-color: #1992d4;
 }
 .sidebar *{
     color: white;
-    text-decoration: none;
     font-size: 107%;
+}
+.sidebar-link-cont a{
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 .1rem;
+}
+/* hover underline animation */
+a {
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+}
+a:hover,
+a:focus,
+a:active {background-size: 100% 0.1em;}
+#dash-btn{
+    color: #1992d4;
 }
 
 header{
@@ -68,16 +101,20 @@ header {grid-area: header;}
     align-items: center;
     padding: 1em;
     /* justify-self: flex-end; */
+    padding-bottom: 0;
+    margin: 0;
+}
+.searchbar-label{
+    display: flex;
 }
 .nav-profile{
     display: flex;
-    gap: 1.5em;
+    gap: 1em;
     padding-top: 1em;
     margin-right: 20%;
     justify-content: flex-end;
     align-items: center;
 }
-
 .nav-profile-img{
     width: 40px;
     height: 40px;
